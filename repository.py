@@ -28,12 +28,12 @@ class ColorRepository:
         with open(self.__colors_file, 'r') as file:
             self.__colors = loads(file.read())
 
-    def get_colors(self):
+    def all_colors(self):
         """
         Get colors
         :return: colors
         """
-        return self.__colors
+        return dumps(self.__colors)
 
     def get_color(self, color_name):
         """
@@ -43,7 +43,7 @@ class ColorRepository:
         """
         for color in self.__colors:
             if color['name'] == color_name:
-                return color
+                return dumps(color)
         raise ColorNotFoundException("Color not found")
 
     def insert_color(self, color):
