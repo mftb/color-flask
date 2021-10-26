@@ -1,4 +1,5 @@
 import pytest
+
 from validator import color_validator
 
 valid_color = {

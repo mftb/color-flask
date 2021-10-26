@@ -4,7 +4,7 @@ branch=True
 cover_pylib=False
 data_file=.coverage
 source=./
-omit=venv*,tests/*,test_*.py,*_test.py,demo.py
+omit=venv*,tests/*,test_*.py,*_test.py,demo.py,app.py
 
 [report]
 fail_under=0
