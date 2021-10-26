@@ -56,6 +56,27 @@ podman build -t color-flask .
 podman run -it -p 5000:5000 color-flask:latest
 ```
 
+You can request it the same way as before:
+
+```
+curl --location --request GET 'http://0.0.0.0:5000' \
+--header 'Content-Type: application/json'
+```
+
+```
+curl --location --request GET 'http://0.0.0.0:5000/red' \
+--header 'Content-Type: application/json'
+```
+
+```
+curl --location --request POST 'http://0.0.0.0:5000' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "color": "fuchsia",
+    "value": "#fab"
+}'
+```
+
 # Deploying with podman
 
 You can deploy the application with podman pushing it to a container registry also using podman:
