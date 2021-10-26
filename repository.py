@@ -20,6 +20,7 @@ class ColorRepository:
     """
 
     __colors_file = "colors.json"
+    __repo_file = "repo.json"
 
     def __init__(self):
         """
@@ -27,6 +28,8 @@ class ColorRepository:
         """
         with open(self.__colors_file, 'r') as file:
             self.__colors = loads(file.read())
+        with open(self.__repo_file, 'w') as file:
+            file.write(dumps(self.__colors))
 
     def all_colors(self):
         """
@@ -58,7 +61,7 @@ class ColorRepository:
                 raise ColorAlreadyExistsException("Color already exists")
         self.__colors.append(color)
         try:
-            with open(self.__colors_file, 'w') as file:
+            with open(self.__repo_file, 'w') as file:
                 file.write(dumps(self.__colors))
         except Exception as e:
             self.__colors = old_colors
