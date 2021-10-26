@@ -13,6 +13,7 @@ class ColorController:
 
     def get_color(self, color_name):
         try:
+            print(color_name)
             return self.__repository.get_color(color_name), 200, self.__headers
         except ColorNotFoundException:
             return {"error": "Color not found"}, 404, self.__headers

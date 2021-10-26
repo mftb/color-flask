@@ -12,13 +12,13 @@ def all_colors_endpoint():
     return make_response(controller.all_colors())
 
 
-@app.route('/{color}', methods=['GET'])
+@app.route('/<color>', methods=['GET'])
 def get_color_endpoint(color):
-    return make_response(controller.get_color(color))
+    return make_response(controller.get_color(request.view_args['color']))
 
 
 @app.route('/', methods=['POST'])
-def add_color_endpoint(request):
+def add_color_endpoint():
     return make_response(controller.add_color(request.json))
 
 

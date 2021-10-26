@@ -45,7 +45,7 @@ class ColorRepository:
         :return: color
         """
         for color in self.__colors:
-            if color['name'] == color_name:
+            if color['color'] == color_name:
                 return dumps(color)
         raise ColorNotFoundException("Color not found")
 
@@ -57,7 +57,7 @@ class ColorRepository:
         """
         old_colors = deepcopy(self.__colors)
         for my_color in self.__colors:
-            if my_color['name'] == color['name']:
+            if my_color['color'] == color['color']:
                 raise ColorAlreadyExistsException("Color already exists")
         self.__colors.append(color)
         try:
