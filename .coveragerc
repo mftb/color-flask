@@ -1,0 +1,19 @@
+# .coveragerc to control coverage.py
+[run]
+branch=True
+cover_pylib=False
+data_file=.coverage
+source=./
+omit=venv*,tests/*,test_*.py,*_test.py,demo.py
+
+[report]
+fail_under=0
+ignore_errors=False
+precision=2
+show_missing=True
+skip_covered=False
+sort=Name
+
+[html]
+directory=htmlcov
+title=Python Coverage Report

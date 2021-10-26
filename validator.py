@@ -5,3 +5,7 @@ def color_validator(color):
         raise KeyError("color dictionary must have a 'color' key")
     if "value" not in color:
         raise KeyError("color dictionary must have a 'value' key")
+    if not isinstance(color['color'], str):
+        raise TypeError("'color' must be a string")
+    if not isinstance(color['value'], str):
+        raise TypeError("'value' must be a string")
