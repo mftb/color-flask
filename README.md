@@ -76,11 +76,3 @@ curl --location --request POST 'http://0.0.0.0:5000' \
     "value": "#fab"
 }'
 ```
-
-# Deploying with podman
-
-You can deploy the application with podman pushing it to a container registry also using podman:
-
-```
-podman push color-flask:latest
-```
