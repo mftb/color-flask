@@ -56,7 +56,7 @@ podman build -t color-flask .
 podman run -it -p 5000:5000 color-flask:latest
 ```
 
-You can request it the same way as before:
+You can request it the same way:
 
 ```
 curl --location --request GET 'http://0.0.0.0:5000' \
