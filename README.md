@@ -13,7 +13,22 @@ python app.py
 
 Then, you can
 ```
-POST http://127.0.0.1:5000/
+curl --location --request GET 'http://127.0.0.1:5000' \
+--header 'Content-Type: application/json'
+```
+
+```
+curl --location --request GET 'http://127.0.0.1:5000/red' \
+--header 'Content-Type: application/json'
+```
+
+```
+curl --location --request POST 'http://127.0.0.1:5000' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "color": "fuchsia",
+    "value": "#fab"
+}'
 ```
 
 ## Running tests:
