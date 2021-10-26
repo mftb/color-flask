@@ -46,3 +46,20 @@ source venv/bin/activate
 pip install -r requirements.txt
 pytest --cov
 ```
+
+# Running with podman
+
+You can run the application with podman with the following commands:
+
+```
+podman build -t color-flask .
+podman run -it -p 5000:5000 color-flask:latest
+```
+
+# Deploying with podman
+
+You can deploy the application with podman pushing it to a container repo also using podman:
+
+```
+podman push color-flask:latest
+```
