@@ -58,7 +58,7 @@ podman run -it -p 5000:5000 color-flask:latest
 
 # Deploying with podman
 
-You can deploy the application with podman pushing it to a container repo also using podman:
+You can deploy the application with podman pushing it to a container registry also using podman:
 
 ```
 podman push color-flask:latest
